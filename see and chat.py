@@ -14,7 +14,8 @@ except ImportError:
     sr = None
 
 # === 設定區 ===
-API_KEY = "REDACTED_GEMINI_API_KEY"  # 你的 Gemini Key
+# 從環境變數讀取 Gemini API key（優先）
+API_KEY = os.environ.get("GEMINI_API_KEY", "")  # 設定環境變數 GEMINI_API_KEY 或放入 .env
 CHAT_MODEL_NAME = "gemini-2.5-flash-lite"  # 腦袋 (負責思考)
 
 # 微軟 Edge TTS 設定 (這裡可以選聲音)
